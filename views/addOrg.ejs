@@ -1,0 +1,45 @@
+<html>
+<head>
+  <title>Express HTML</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div style="margin:100px;">
+    <nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">SFDX</a>
+    <ul class="nav navbar-nav">
+     
+      <li>
+        <a href="/allOrgs">All Orgs</a>
+      </li>
+      <li>
+        <a href="/addOrgForm">Add Org</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    <div class="jumbotron"  style="padding:40px;">
+      <h1>ADD ORG</h1>
+     <form method="POST" action="/authOrg">
+  <div class="form-group">
+    <label for="Alias">Org Alias Name</label>
+    <input type="text" class="form-control" name="aliasName" id="Alias" aria-describedby="emailHelp" placeholder="Enter alis name">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <button type="submit" class="btn btn-primary">Authorize</button>
+</form>
+
+    </div>
+  </div>
+
+<script>
+function authorizeOrg(){
+
+}
+</script>
+</body>
+</html>

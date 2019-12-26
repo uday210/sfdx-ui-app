@@ -1,0 +1,112 @@
+<html>
+<head>
+  <title>Express HTML</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div style="margin:100px;">
+    <nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">SFDX</a>
+    <ul class="nav navbar-nav">
+     
+      <li>
+        <a href="/allOrgs">All Orgs</a>
+      </li>
+      <li>
+        <a href="/addOrgForm">Add Org</a>
+      </li>
+	  <li>
+        <a href="/migrate">Migrate</a>
+      </li>
+	  <li >
+	  <a href="https://github.com/axlemax/sfdx">help</a>
+	  </li>
+    </ul>
+  </div>
+</nav>
+    <div class="jumbotron"  style="padding:40px;">
+     
+
+        
+<table class="table">
+    <thead>
+       <tr>
+         <th scope="col">From</th>
+         <th scope="col">=</th>
+         <th scope="col">To</th>
+       </tr>
+     </thead>
+     <% orgs.forEach((org) => { %>
+     <tr>
+       <td><%= org.From %></td>
+       <td><button class="btn btn-primary"  onclick="migrateData('<%=org.From%>','<%=org.To%>')"> <span class="glyphicon glyphicon-arrow-right"></span></button>
+       
+       </td>
+       <td>
+        <%= org.To %>
+       </td>
+   </tr>		
+     <% }); %>
+   </table>
+   
+    </div>
+  </div>
+<script>
+
+    function migrateData(from,to){
+        alert(from+' : '+to);
+		from = from.split(' (')[0];
+		to = to.split(' (')[0];
+		alert(from+' : '+to);
+		retrieveMetadata(from,to);
+    }
+	
+	
+	
+	function retrieveMetadata(orgAliasIs,to){
+
+//$('div[name ="'+orgAliasIs+'"]').show();
+ $.ajax({
+      type: 'GET',
+      url: '/retrievemetadata?org='+orgAliasIs,
+      success: function(data) {
+	  alert('data retrieved successfully');
+       console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
+	   console.log(data);
+	   
+	   deployMetadata(to);
+	//   $('#refreieveData').html(data);
+	   
+//$('div[name ="'+orgAliasIs+'"]').hide();
+      }
+    });
+}
+
+
+function deployMetadata(orgAliasIs){
+alert('deploying to '+orgAliasIs);
+//pushmetadata
+
+
+$.ajax({
+      type: 'GET',
+      url: '/pushmetadatatoorg?org='+orgAliasIs,
+      success: function(data) {
+	  alert('data pused successfully');
+       console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
+	   console.log(data);
+	   
+	 //  deployMetadata(to);
+	//   $('#refreieveData').html(data);
+	   
+//$('div[name ="'+orgAliasIs+'"]').hide();
+      }
+    });
+}
+</script>
+</body>
+</html>

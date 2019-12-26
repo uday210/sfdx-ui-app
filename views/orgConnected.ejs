@@ -1,0 +1,69 @@
+<html>
+<head>
+  <title>Express HTML</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div style="text-align:right">
+<span>Org :</span><span class="badge badge-success"><%= orgnameis %></span>
+</div>
+  <div style="margin:100px;">
+    <nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">SFDX</a>
+    <ul class="nav navbar-nav">
+     
+      <li>
+        <a href="/allOrgs">All Orgs</a>
+      </li>
+      <li>
+          <a href="/addOrgForm">Add Org</a>
+      </li>
+	  <li >
+	  <a href="https://github.com/axlemax/sfdx">help</a>
+	  </li>
+    </ul>
+  </div>
+</nav>
+<div class="alert alert-success" role="alert">
+  Successfully conneted to Connected to   <%= orgnameis %>
+</div>
+    <div class="jumbotron"  style="padding:40px;">
+     
+		
+<textarea rows="4" cols="50">
+At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
+</textarea>
+<button class="btn btn-primary" data-alias="<%=orgnameis%>" onclick="retrieveSoql('<%=orgnameis%>')">Retrieve</button>
+	
+    </div>
+	<pre id="refreieveData">
+	</pre>
+	
+  </div>
+
+<script>
+	function retrieveSoql(orgAliasIs){
+	
+	
+ $.ajax({
+      type: 'GET',
+      url: '/renSoql?org='+orgAliasIs,
+      success: function(data) {
+       console.log('>>>>>>>>>>>>>>>>>>>soql data >>>>>>>>>>>>>>>>>>');
+	   console.log(data);
+	   $('#refreieveData').html(data);
+	   
+//$('div[name ="'+orgAliasIs+'"]').hide();
+      }
+    });
+	
+	}
+</script>
+
+</body>
+</html>
+

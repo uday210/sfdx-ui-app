@@ -1,0 +1,303 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+ <div style="margin:100px;">
+    <nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">SFDX</a>
+    <ul class="nav navbar-nav">
+     
+      <li>
+        <a href="/allOrgs">All Orgs</a>
+      </li>
+      <li>
+          <a href="/addOrgForm">Add Org</a>
+      </li>
+	  <li >
+	  <a href="https://github.com/axlemax/sfdx">help</a>
+	  </li>
+    </ul>
+  </div>
+</nav>
+  <div class="jumbotron"  style="padding:40px;">
+<div class="container">
+
+<div class="row">
+  
+<div class="form-group">
+ <div class="row">
+    <div class="col-xs-5">
+ 
+  <label for="sel1">Select list:</label>
+  <select class="form-control" id="sel1" onchange="callmetadata(this.value)">
+  <option >select</option>  
+ <!--<option value="ActionLinkGroupTemplate">Action Link Group Template</option>
+<option value="ApexClass">Apex Class</option>
+<option value="CustomShareRowCause">Apex Sharing Reason</option>
+<option value="ApexTrigger">Apex Trigger</option>
+<option value="TabSet" >App</option>
+<option value="ProcessDefinition">Approval Process</option>
+<option value="ContentAsset">Asset File</option>
+<option value="AssignmentRule">Assignment Rule</option>
+<option value="AssistantRecommendationType">Assistant Recommendation Type</option>
+<option value="AuraDefinitionBundle">Aura Component Bundle</option>
+<option value="AuthProvider">Auth. Provider</option>
+<option value="AutoResponseRule">Auto-Response Rule</option>
+<option value="WebLink">Button or Link</option>
+<option value="CorsWhitelistEntry">CORS Whitelist Origin</option>
+<option value="CallCenter">Call Center</option>
+<option value="ChatterExtension">Chatter Extension</option>
+<option value="BrandTemplate">Classic Letterhead</option>
+<option value="CommChannelLayout">Communication Channel Layout</option>
+<option value="CompactLayout">Compact Layout</option>
+<option value="CspTrustedSite">Content Security Policy Trusted Site</option>
+<option value="CustomConsoleComponent">Custom Console Component</option>
+<option value="CustomDataType">Custom Data Type</option>
+<option value="CustomFieldDefinition">Custom Field</option>
+<option value="CustomHelpMenuSection">Custom Help Menu Section</option>
+<option value="ExternalString">Custom Label</option>
+<option value="Custom Metadata Type">Custom Metadata Type</option>
+<option value="CustomNotificationType">Custom Notification Type</option>
+<option value="CustomEntityDefinition">Custom Object</option>
+<option value="CustomPermission">Custom Permission</option>
+<option value="CustomReportType">Custom Report Type</option>
+<option value="Custom Settings">Custom Setting</option>
+<option value="Dashboard">Dashboard</option>
+<option value="CleanDataService">Data Service</option>
+<option value="Document">Document</option>
+<option value="DuplicateRule">Duplicate Rule</option>
+<option value="EclairNgMapGeoJson">EclairNG Map GeoJson</option>
+<option value="Emaar_App_Setting__mdt">Emaar App Setting</option>
+<option value="EmailTemplate">Email Template</option>
+<option value="EmbeddedServiceConfig">Embedded Service Deployment</option>
+<option value="SlaProcess">Entitlement Process</option>
+<option value="EntitlementTemplate">Entitlement Template</option>
+<option value="EscalationRule">Escalation Rule</option>
+<option value="EventSubscription">Event Subscription</option>
+<option value="ExternalDataSource">External Data Source</option>
+<option value="ExternalServiceRegistration">External Service Registration</option>
+<option value="FeedFilterDefinition">Feed Filter</option>
+<option value="FieldMapping">Field Mapping</option>
+<option value="FieldSet">Field Set</option>
+<option value="FlowDefinition">Flow Definition</option>
+<option value="Folder">Folder</option>
+<option value="SharedPicklistDefinition">Global Value Set</option>
+<option value="Group">Group</option>
+<option value="PageComponent">Home Page Component</option>
+<option value="CustomPage">Home Page Layout</option>
+<option value="ActionKnowledgeSubmit">Knowledge Action</option>
+<option value="Translation">Language Translation</option>
+<option value="LightningBolt">Lightning Bolt</option>
+<option value="CommunityTemplateDefinition">Lightning Community Template</option>
+<option value="CommunityThemeDefinition">Lightning Community Theme</option>
+<option value="LightningExperienceTheme">Lightning Experience Theme</option>
+<option value="FlexiPage">Lightning Page</option>
+<option value="LightningComponentBundle">Lightning Web Component Bundle</option>
+<option value="ListView">List View</option>
+<option value="ManagedContentType">Managed Content Type</option>
+<option value="MatchingRule">Matching Rule</option>
+<option value="MailAppOwaWhitelist">Microsoft® Outlook® Web App Domain</option>
+<option value="MilestoneType">Milestone</option>
+<option value="NamedCredential">Named Credential</option>
+<option value="Network">Network</option>
+<option value="Layout">Page Layout</option>
+<option value="PathAssistant">Path Assistant</option>
+<option value="PermissionSet">Permission Set</option>
+<option value="PermissionSetGroup">Permission Set Group</option>
+<option value="PlatformCachePartition">Platform Cache Partition</option>
+<option value="PlatformEventChannel">Platform Event Channel</option>
+<option value="PlatformEventChannelMember">Platform Event Channel Member</option>
+<option value="FeedPostTemplate">Post Template</option>
+<option value="Prompt">Prompt</option>
+<option value="Queues">Queue</option>
+<option value="RecommendationStrategy">Recommendation Strategy</option>
+<option value="RecordType">Record Type</option>
+<option value="RecordActionDeployment">RecordAction Deployment</option>
+<option value="RemoteProxy">Remote Site</option>
+<option value="Report">Report</option>
+<option value="ReportJob">Reporting Snapshot</option>
+<option value="UserRole">Role</option>
+<option value="Scontrol">S-Control</option>
+<option value="SecurityCustomBaseline">Security Custom Baseline</option>
+<option value="ActionSend">Send Action</option>
+<option value="CustomObjectCriteriaSharingRule">Sharing Criteria Rule</option>
+<option value="CustomObjectOwnerSharingRule">Sharing Owner Rule</option>
+<option value="SharingSet">Sharing Set</option>
+<option value="Site">Site.com</option>
+<option value="StaticResource">Static Resource</option>
+<option value="CustomTabDefinition">Tab</option>
+<option value="TransactionSecurityPolicy">Transaction Security Policy</option>
+<option value="ValidationFormula">Validation Rule</option>
+<option value="ApexComponent">Visualforce Component</option>
+<option value="ApexPage">Visualforce Page</option>
+<option value="CspFrameAncestor">Whitelisted Site</option>
+<option value="ActionEmail">Workflow Email Alert</option>
+<option value="ActionFieldUpdate">Workflow Field Update</option>
+<option value="ActionOutboundMessage">Workflow Outbound Message</option>
+<option value="WorkflowRule">Workflow Rule</option>
+<option value="ActionTask">Workflow Task</option>
+<option value="Community">Zone</option>-->
+  </select>
+ </div>
+  <div class="col-xs-2">
+  <span style="
+    visibility: hidden;
+    /* display: none; */
+">action</span>
+    <button type="button" id="generateXml" class="btn btn-block btn-info" onclick="generateXml()">Generate XML <i class="fa fa-download"></i></button>
+   
+ </div>
+</div>
+
+</div>
+  <div class="row">
+    <div class="col-xs-5">
+      <select name="from[]" id="multiselect" class="form-control" size="8" multiple="multiple">
+       <!-- <option value="1">Item 1</option>
+        <option value="2">Item 5</option>
+        <option value="2">Item 2</option>
+        <option value="2">Item 4</option>
+        <option value="3">Item 3</option>-->
+      </select>
+    </div>
+
+    <div class="col-xs-2">
+      <button type="button" id="multiselect_rightAll" class="btn btn-block btn-primary"><i class="glyphicon glyphicon-forward"></i></button>
+      <button type="button" id="multiselect_rightSelected" class="btn btn-block btn-primary"><i class="glyphicon glyphicon-chevron-right"></i></button>
+      <button type="button" id="multiselect_leftSelected" class="btn btn-block btn-primary"><i class="glyphicon glyphicon-chevron-left"></i></button>
+      <button type="button" id="multiselect_leftAll" class="btn btn-block btn-primary"><i class="glyphicon glyphicon-backward"></i></button>
+	  <button type="button" id="AddSelected" class="btn btn-block btn-success" onclick="AddSelected()">Add</button>
+    </div>
+
+    <div class="col-xs-5">
+      <select name="to[]" id="multiselect_to" class="form-control" size="8" multiple="multiple"></select>
+    </div>
+  </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<script>
+
+// https://crlcu.github.io/multiselect/
+
+if("undefined"==typeof jQuery)throw new Error("multiselect requires jQuery");!function(t){"use strict";var e=t.fn.jquery.split(" ")[0].split(".");if(e[0]<2&&e[1]<7)throw new Error("multiselect requires jQuery version 1.7 or higher")}(jQuery),function(t){"function"==typeof define&&define.amd?define(["jquery"],t):t(jQuery)}(function(t){"use strict";var e=function(t){function e(e,o){var i=e.prop("id");this.$left=e,this.$right=t(t(o.right).length?o.right:"#"+i+"_to"),this.actions={$leftAll:t(t(o.leftAll).length?o.leftAll:"#"+i+"_leftAll"),$rightAll:t(t(o.rightAll).length?o.rightAll:"#"+i+"_rightAll"),$leftSelected:t(t(o.leftSelected).length?o.leftSelected:"#"+i+"_leftSelected"),$rightSelected:t(t(o.rightSelected).length?o.rightSelected:"#"+i+"_rightSelected"),$undo:t(t(o.undo).length?o.undo:"#"+i+"_undo"),$redo:t(t(o.redo).length?o.redo:"#"+i+"_redo")},delete o.leftAll,delete o.leftSelected,delete o.right,delete o.rightAll,delete o.rightSelected,this.options={keepRenderingSort:o.keepRenderingSort,submitAllLeft:void 0!==o.submitAllLeft?o.submitAllLeft:!0,submitAllRight:void 0!==o.submitAllRight?o.submitAllRight:!0,search:o.search,ignoreDisabled:void 0!==o.ignoreDisabled?o.ignoreDisabled:!1},delete o.keepRenderingSort,o.submitAllLeft,o.submitAllRight,o.search,o.ignoreDisabled,this.callbacks=o,this.init()}return e.prototype={init:function(){var e=this;e.undoStack=[],e.redoStack=[],(e.$left.find("optgroup").length||e.$right.find("optgroup").length)&&(e.callbacks.sort=!1,e.options.search=!1),e.options.keepRenderingSort&&(e.skipInitSort=!0,e.callbacks.sort!==!1&&(e.callbacks.sort=function(e,o){return t(e).data("position")>t(o).data("position")?1:-1}),e.$left.find("option").each(function(e,o){t(o).data("position",e)}),e.$right.find("option").each(function(e,o){t(o).data("position",e)})),"function"==typeof e.callbacks.startUp&&e.callbacks.startUp(e.$left,e.$right),e.skipInitSort||"function"!=typeof e.callbacks.sort||(e.$left.mSort(e.callbacks.sort),e.$right.each(function(o,i){t(i).mSort(e.callbacks.sort)})),e.options.search&&e.options.search.left&&(e.options.search.$left=t(e.options.search.left),e.$left.before(e.options.search.$left)),e.options.search&&e.options.search.right&&(e.options.search.$right=t(e.options.search.right),e.$right.before(t(e.options.search.$right))),e.events()},events:function(){var e=this;e.options.search&&e.options.search.$left&&e.options.search.$left.on("keyup",function(t){if(this.value){e.$left.find('option:search("'+this.value+'")').mShow(),e.$left.find('option:not(:search("'+this.value+'"))').mHide()}else e.$left.find("option").mShow()}),e.options.search&&e.options.search.$right&&e.options.search.$right.on("keyup",function(t){if(this.value){e.$right.find('option:search("'+this.value+'")').mShow(),e.$right.find('option:not(:search("'+this.value+'"))').mHide()}else e.$right.find("option").mShow()}),e.$right.closest("form").on("submit",function(t){e.$left.find("option").prop("selected",e.options.submitAllLeft),e.$right.find("option").prop("selected",e.options.submitAllRight)}),e.$left.on("dblclick","option",function(t){t.preventDefault();var o=e.$left.find("option:selected");o.length&&e.moveToRight(o,t)}),e.$left.on("keypress",function(t){if(13===t.keyCode){t.preventDefault();var o=e.$left.find("option:selected");o.length&&e.moveToRight(o,t)}}),e.$right.on("dblclick","option",function(t){t.preventDefault();var o=e.$right.find("option:selected");o.length&&e.moveToLeft(o,t)}),e.$right.on("keydown",function(t){if(8===t.keyCode||46===t.keyCode){t.preventDefault();var o=e.$right.find("option:selected");o.length&&e.moveToLeft(o,t)}}),(navigator.userAgent.match(/MSIE/i)||navigator.userAgent.indexOf("Trident/")>0||navigator.userAgent.indexOf("Edge/")>0)&&(e.$left.dblclick(function(t){e.actions.$rightSelected.trigger("click")}),e.$right.dblclick(function(t){e.actions.$leftSelected.trigger("click")})),e.actions.$rightSelected.on("click",function(o){o.preventDefault();var i=e.$left.find("option:selected");i.length&&e.moveToRight(i,o),t(this).blur()}),e.actions.$leftSelected.on("click",function(o){o.preventDefault();var i=e.$right.find("option:selected");i.length&&e.moveToLeft(i,o),t(this).blur()}),e.actions.$rightAll.on("click",function(o){o.preventDefault();var i=e.$left.children(":not(span):not(.hidden)");i.length&&e.moveToRight(i,o),t(this).blur()}),e.actions.$leftAll.on("click",function(o){o.preventDefault();var i=e.$right.children(":not(span):not(.hidden)");i.length&&e.moveToLeft(i,o),t(this).blur()}),e.actions.$undo.on("click",function(t){t.preventDefault(),e.undo(t)}),e.actions.$redo.on("click",function(t){t.preventDefault(),e.redo(t)})},moveToRight:function(e,o,i,n){var r=this;return"function"==typeof r.callbacks.moveToRight?r.callbacks.moveToRight(r,e,o,i,n):"function"!=typeof r.callbacks.beforeMoveToRight||i||r.callbacks.beforeMoveToRight(r.$left,r.$right,e)?(e.each(function(e,o){var i=t(o);if(r.options.ignoreDisabled&&i.is(":disabled"))return!0;if(i.parent().is("optgroup")){var n=i.parent(),l=r.$right.find('optgroup[label="'+n.prop("label")+'"]');l.length||(l=n.clone(),l.children().remove()),i=l.append(i),n.removeIfEmpty()}r.$right.move(i)}),n||(r.undoStack.push(["right",e]),r.redoStack=[]),"function"!=typeof r.callbacks.sort||i||r.$right.mSort(r.callbacks.sort),"function"!=typeof r.callbacks.afterMoveToRight||i||r.callbacks.afterMoveToRight(r.$left,r.$right,e),r):!1},moveToLeft:function(e,o,i,n){var r=this;return"function"==typeof r.callbacks.moveToLeft?r.callbacks.moveToLeft(r,e,o,i,n):"function"!=typeof r.callbacks.beforeMoveToLeft||i||r.callbacks.beforeMoveToLeft(r.$left,r.$right,e)?(e.each(function(e,o){var i=t(o);if(i.is("optgroup")||i.parent().is("optgroup")){var n=i.is("optgroup")?i:i.parent(),l=r.$left.find('optgroup[label="'+n.prop("label")+'"]');l.length||(l=n.clone(),l.children().remove()),i=l.append(i.is("optgroup")?i.children():i),n.removeIfEmpty()}r.$left.move(i)}),n||(r.undoStack.push(["left",e]),r.redoStack=[]),"function"!=typeof r.callbacks.sort||i||r.$left.mSort(r.callbacks.sort),"function"!=typeof r.callbacks.afterMoveToLeft||i||r.callbacks.afterMoveToLeft(r.$left,r.$right,e),r):!1},undo:function(t){var e=this,o=e.undoStack.pop();if(o)switch(e.redoStack.push(o),o[0]){case"left":e.moveToRight(o[1],t,!1,!0);break;case"right":e.moveToLeft(o[1],t,!1,!0)}},redo:function(t){var e=this,o=e.redoStack.pop();if(o)switch(e.undoStack.push(o),o[0]){case"left":e.moveToLeft(o[1],t,!1,!0);break;case"right":e.moveToRight(o[1],t,!1,!0)}}},e}(t);t.multiselect={defaults:{startUp:function(t,e){e.find("option").each(function(e,o){var i=t.find('option[value="'+o.value+'"]'),n=i.parent();i.remove(),"OPTGROUP"==n.prop("tagName")&&n.removeIfEmpty()})},beforeMoveToRight:function(t,e,o){return!0},afterMoveToRight:function(t,e,o){},beforeMoveToLeft:function(t,e,o){return!0},afterMoveToLeft:function(t,e,o){},sort:function(t,e){return"NA"==t.innerHTML?1:"NA"==e.innerHTML?-1:t.innerHTML>e.innerHTML?1:-1}}};var o=window.navigator.userAgent,i=o.indexOf("MSIE ")+o.indexOf("Trident/")+o.indexOf("Edge/")>-3;t.fn.multiselect=function(o){return this.each(function(){var i=t(this),n=i.data("crlcu.multiselect"),r=t.extend({},t.multiselect.defaults,i.data(),"object"==typeof o&&o);n||i.data("crlcu.multiselect",n=new e(i,r))})},t.fn.move=function(t){return this.append(t).find("option").prop("selected",!1),this},t.fn.removeIfEmpty=function(){return this.children().length||this.remove(),this},t.fn.mShow=function(){return this.removeClass("hidden").show(),i&&this.each(function(e,o){t(o).parent().is("span")&&t(o).parent().replaceWith(o),t(o).show()}),this},t.fn.mHide=function(){return this.addClass("hidden").hide(),i&&this.each(function(e,o){t(o).parent().is("span")||t(o).wrap("<span>").hide()}),this},t.fn.mSort=function(t){return this.find("option").sort(t).appendTo(this),this},t.expr[":"].search=function(e,o,i){return t(e).text().toUpperCase().indexOf(i[3].toUpperCase())>=0}});
+
+jQuery(document).ready(function($) { $('#multiselect').multiselect(); });
+</script>
+
+<script>
+//getMetaInfo
+var selecteData = {};
+var currentMemeber = '';
+function callmetadata(mem){
+getMetadata('YourAlias1',mem);
+currentMemeber = mem;
+}
+function getMetadata(orgAliasIs,mem){
+$('#multiselect_to').children().remove()
+
+$.ajax({
+      type: 'GET',
+      url: '/getMetaInfo?org='+orgAliasIs+'&member='+mem,
+      success: function(data) {
+	   $('#multiselect').html('');
+	
+       console.log('>>>>>>>>>>>>>>>>>>META INFO>>>>>>>>>>>>>>>>>>>');
+	   console.log(JSON.parse(data));
+	   JSON.parse(data).result.forEach(function(eachMemeber){
+	   //eachMemeber.fullName
+	   
+	     $('#multiselect').append('<option value="' + eachMemeber.fullName + '">' + eachMemeber.fullName + '</option>');
+	   });
+	
+      }
+    });
+}
+//deployMetadata('YourAlias1');
+
+function AddSelected(){
+var selectedMemeber = [];
+
+
+$("#multiselect_to option").each(function()
+{
+console.log('>>>>');
+    selectedMemeber.push($(this).val());// to your list
+});
+//if(selecteData[currentMemeber]){
+selecteData[currentMemeber] = selectedMemeber;
+console.log(selecteData);
+}
+
+function generateXml(){
+var xmlStart = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Package xmlns="http://soap.sforce.com/2006/04/metadata">';
+var body = '';
+
+var xmlEnd = ' <version>47.0</version>\n</Package>';
+
+Object.keys(selecteData).forEach(function(eachMemeberSection){
+	var memebersTags= '';
+	
+	selecteData[eachMemeberSection].forEach(function(eachMemeber){
+		memebersTags+= '\t<members>'+eachMemeber+'</members>'+'\n';
+	
+	});
+	
+	var memeberType = '\t<name>'+eachMemeberSection+'</name>\n';
+	
+	body+=' <types>\n'+memebersTags+memeberType+'</types>'; 
+	body+= '\n';
+});
+
+var finalXml = xmlStart+'\n'+body+'\n'+xmlEnd;
+
+console.log(finalXml);
+var data = {};
+data['XML'] = finalXml;
+data['Alias'] = 'YourAlias1';
+//generateXML
+
+$.ajax({
+      type: 'POST',
+      url: '/generateXML',
+	  data:data,
+      success: function(resp) {
+	  console.log('resp ',resp);
+	 alert('DONE');
+      }
+    });
+}
+
+
+
+
+
+function getDepData(orgAliasIs){
+//$('#multiselect_to').children().remove()
+
+$.ajax({
+      type: 'GET',
+      url: '/getDeployableDataIs?org='+orgAliasIs,
+      success: function(data) {
+	   console.log('>>>>>>>>>>>>>>>>>>Deployable DATA >>>>>>>>>>>>>>>>>>>');
+	   console.log(JSON.parse(data));
+	   JSON.parse(data).result.metadataObjects.forEach(function(eachMetaObject){
+	   //eachMemeber.fullName
+	   
+	     $('#sel1').append('<option value="' + eachMetaObject.xmlName + '">' + eachMetaObject.xmlName + '</option>');
+	   });
+	
+      }
+    });
+}
+
+getDepData('YourAlias1');
+</script>
